@@ -15,6 +15,7 @@
     "body-parser": "^1.17.2",
     "class-transformer": "^0.1.7",
     "class-validator": "^0.7.2",
+    "guid-typescript": "^1.0.7",
     "reflect-metadata": "^0.1.10",
     "rxjs": "^5.4.0",
     "typescript": "^2.5.2"
