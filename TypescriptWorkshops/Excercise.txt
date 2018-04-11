@@ -1,0 +1,42 @@
+3 rodzaje transferow
+- Domestic
+- Foreign
+- Tax
+
+Domestic przyjmuje:
+- description - mozliwy null
+- amount - mozliwy null
+- account - mozliwy null
+- isInternal
+
+Foreign przyjmuje
+- description - mozliwy null
+- amount - mozliwy null
+- account - mozliwy null
+- type - mozliwe wartosci Sepa, NonSepa
+
+Tax przyjmuje
+- description - mozliwy null
+- amount - mozliwy null
+- account - mozliwy null
+- periodType - mozliwe wartosci Monthly, Quarterly
+
+walidacja 
+- jezeli ktores z nullowalnych jest nullem/undefined powinnien byc rzucony specifyczny exception ktory powinnien byc zamieniony na blad i zwrocony przez api
+- jezeli inne exception to powinnien byc rethrow
+- jezeli dlugosc account jest wieksza niz 10 to powinnien byc zwrocony error (model errorMessage, errorDescription) z api
+- jezeli ammount jest wieksza niz 1000 to powinnien byc zwrocony error (model errorMessage, errorDescription) z api 
+
+notyfikacja
+- dla kazdych danych wejsciowych powinna byc notyfikacja odnosnie proby utworzenia transferu. 
+- Powinnien zostac stworzony serwis ktory taka notyfikacje bedzie wysylal. W aktualnej implementacji ma to byc poprostu console log danych wejsciowych jednak z zachowaniem ze implementacja ta moze sie zmienic w przyszlosci.
+- Taki serwis powinnien posiadac tylko jedna metode ktora przyjmuje dane wejsciowe, wykonuje notyfikacje i zwraca obiekt eventu z danym wejsciowymi + guidem.
+
+utworzenie przelewu
+- todo
+
+reguly:
+- bez uzywania any - jedyne any jaki moze byc uzyte to co zwraca kontroler
+- brak logiki w kontrolerach - kontroler moze posiadac max 1 if'a :)
+
+
