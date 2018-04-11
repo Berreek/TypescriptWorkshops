@@ -38,12 +38,10 @@
     <Content Include="tslint.json">
       <SubType>Code</SubType>
     </Content>
-    <TypeScriptCompile Include="src\modules\testApplicationModule\controllers\test.controller.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="src\modules\testApplicationModule\models\testDto.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\modules\testApplicationModule\controllers\foreign.controller.ts" />
+    <TypeScriptCompile Include="src\modules\testApplicationModule\controllers\domestic.controller.ts" />
+    <TypeScriptCompile Include="src\modules\testApplicationModule\controllers\test.controller.ts" />
+    <TypeScriptCompile Include="src\modules\testApplicationModule\models\testDto.ts" />
     <TypeScriptCompile Include="src\modules\testApplicationModule\testApplicationModule.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
