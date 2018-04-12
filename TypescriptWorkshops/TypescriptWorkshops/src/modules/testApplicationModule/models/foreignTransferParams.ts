@@ -5,9 +5,9 @@ export class ForeignTransferParams implements IBasicParams {
     public readonly description?: string;
     public readonly account?: string;
     public readonly amount?: number;
-    public readonly type?: TransferType;
+    public readonly type: TransferType;
 
-    constructor(description?: string, account?: string, amount?: number, type?: TransferType) {
+    constructor(type: TransferType, description?: string, account?: string, amount?: number) {
         this.description = description;
         this.account = account;
         this.amount = amount;

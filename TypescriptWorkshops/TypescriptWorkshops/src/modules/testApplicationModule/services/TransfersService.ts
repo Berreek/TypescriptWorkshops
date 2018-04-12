@@ -9,6 +9,8 @@ import {IBasicParams} from "../models/basicParams";
 import {ErrorResult} from "../models/errorResult";
 import { Component } from "@nestjs/common";
 import {ConsoleNotificationsService} from "./consoleNotifactionsService";
+import {TransferType} from "../models/transferType";
+import {PeriodType} from "../models/periodType";
 
 @Component()
 export class TransfersService {
@@ -43,14 +45,15 @@ export class TransfersService {
         }
 
         let notification = this.notificationsService.notify(params);
-        
+        let now = new Date();
+
         return TransferResult.createForSuccess(
             new ForeignTransferResult(
                 notification.input.amount,
                 notification.id,
                 notification.input.description,
                 notification.input.account,
-                new Date(),
+                notification.input.type === TransferType.NonSepa ? now : new Date(now.setDate(now.getDate() + 1)),
                 notification.input.type));
     }
 
@@ -61,14 +64,15 @@ export class TransfersService {
         }
 
         let notification = this.notificationsService.notify(params);
-        
+        let now = new Date();
+
         return TransferResult.createForSuccess(
             new TaxTransferResult(
                 notification.input.amount,
                 notification.id,
                 notification.input.description,
                 notification.input.account,
-                new Date(),
+                notification.input.type === PeriodType.Monthly ? now : new Date(now.setDate(now.getDate() + 1)),
                 notification.input.type));
     }
 

@@ -5,9 +5,9 @@ export class TaxTransferParams implements IBasicParams {
     public readonly description?: string;
     public readonly account?: string;
     public readonly amount?: number;
-    public readonly type?: PeriodType;
+    public readonly type: PeriodType;
 
-    constructor(description?: string, account?: string, amount?: number, type?: PeriodType) {
+    constructor(type: PeriodType, description?: string, account?: string, amount?: number) {
         this.description = description;
         this.account = account;
         this.amount = amount;
