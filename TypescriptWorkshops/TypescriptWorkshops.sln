@@ -5,11 +5,6 @@ VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "TypescriptWorkshops", "TypescriptWorkshops\TypescriptWorkshops.njsproj", "{5EAB2596-2591-4F20-AF59-AA551A10DD87}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B8D5CF46-3EC0-4871-AD2C-DB3E4263348C}"
-	ProjectSection(SolutionItems) = preProject
-		Excercise.txt = Excercise.txt
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

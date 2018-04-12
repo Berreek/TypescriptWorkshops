@@ -1,8 +1,11 @@
-﻿export class ForeignTransferParams {
-    private readonly description?: string;
-    private readonly account?: string;
-    private readonly amount?: number;
-    private readonly type?: TransferType;
+﻿import {TransferType} from "./transferType";
+import {IBasicParams} from "./basicParams";
+
+export class ForeignTransferParams implements IBasicParams {
+    public readonly description?: string;
+    public readonly account?: string;
+    public readonly amount?: number;
+    public readonly type?: TransferType;
 
     constructor(description?: string, account?: string, amount?: number, type?: TransferType) {
         this.description = description;
@@ -10,9 +13,4 @@
         this.amount = amount;
         this.type = type;
     }
-}
-
-export enum TransferType {
-    Sepa,
-    NonSepa
 }

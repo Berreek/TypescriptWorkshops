@@ -38,18 +38,50 @@
     <Content Include="tslint.json">
       <SubType>Code</SubType>
     </Content>
+    <TypeScriptCompile Include="src\modules\testApplicationModule\controllers\baseController.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\modules\testApplicationModule\controllers\tax.controller.ts" />
     <TypeScriptCompile Include="src\modules\testApplicationModule\controllers\foreign.controller.ts" />
     <TypeScriptCompile Include="src\modules\testApplicationModule\controllers\domestic.controller.ts" />
-    <TypeScriptCompile Include="src\modules\testApplicationModule\controllers\test.controller.ts" />
+    <TypeScriptCompile Include="src\modules\testApplicationModule\models\basicParams.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\modules\testApplicationModule\models\domesticTransferParams.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\modules\testApplicationModule\models\errorResult.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\modules\testApplicationModule\models\foreignTransferResult.ts" />
+    <TypeScriptCompile Include="src\modules\testApplicationModule\models\domesticTransferResult.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\modules\testApplicationModule\services\consoleNotifactionsService.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\modules\testApplicationModule\models\notification.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\modules\testApplicationModule\models\periodType.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\modules\testApplicationModule\models\taxTransferParams.ts" />
     <TypeScriptCompile Include="src\modules\testApplicationModule\models\foreignTransferParams.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="src\modules\testApplicationModule\models\testDto.ts" />
+    <TypeScriptCompile Include="src\modules\testApplicationModule\models\taxTransferResult.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\modules\testApplicationModule\models\transferResult.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\modules\testApplicationModule\models\transferType.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\modules\testApplicationModule\services\TransfersService.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\modules\testApplicationModule\testApplicationModule.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

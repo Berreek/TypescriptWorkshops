@@ -1,8 +1,11 @@
-﻿export class TaxTransferParams {
-    private readonly description?: string;
-    private readonly account?: string;
-    private readonly amount?: number;
-    private readonly type?: PeriodType;
+﻿import {PeriodType} from "./periodType";
+import {IBasicParams} from "./basicParams";
+
+export class TaxTransferParams implements IBasicParams {
+    public readonly description?: string;
+    public readonly account?: string;
+    public readonly amount?: number;
+    public readonly type?: PeriodType;
 
     constructor(description?: string, account?: string, amount?: number, type?: PeriodType) {
         this.description = description;
@@ -10,9 +13,4 @@
         this.amount = amount;
         this.type = type;
     }
-}
-
-export enum PeriodType {
-    Monthly,
-    Quarterly
 }
