@@ -4,39 +4,51 @@
 - Tax
 
 Domestic przyjmuje:
-- description - mozliwy null
-- amount - mozliwy null
-- account - mozliwy null
+- description
+- amount
+- account
 - isInternal
 
+http://localhost:3002/domestic?amount=10&isInternal=false&description=test&account=testowy
+
 Foreign przyjmuje
-- description - mozliwy null
-- amount - mozliwy null
-- account - mozliwy null
+- description
+- amount
+- account
 - type - mozliwe wartosci Sepa, NonSepa
 
+http://localhost:3002/foreign?amount=10&description=test&account=testowy&type=NonSepa
+
 Tax przyjmuje
-- description - mozliwy null
-- amount - mozliwy null
-- account - mozliwy null
+- description
+- amount
+- account
 - periodType - mozliwe wartosci Monthly, Quarterly
 
+http://localhost:3002/tax?amount=10&description=test&account=testowy&type=Monthly
+
+
+Api powinno zwracac 
+- jezeli wszystko pojdzie dobrze to obiekt z wszystkimi propertesiami ktore byly na wejsciu oraz id 
+- jezeli cos pojdzie nie tak to obiekt z property errorMessage opisujacym co bylo nie tak
+
 walidacja 
-- jezeli ktores z nullowalnych jest nullem/undefined powinnien byc rzucony specifyczny exception ktory powinnien byc zamieniony na blad i zwrocony przez api
-- jezeli inne exception to powinnien byc rethrow
-- jezeli dlugosc account jest wieksza niz 10 to powinnien byc zwrocony error (model errorMessage, errorDescription) z api
-- jezeli ammount jest wieksza niz 1000 to powinnien byc zwrocony error (model errorMessage, errorDescription) z api 
+- jezeli ktores z pol description/amount/account jest nullem powinnien byc rzucony RangeError z wiadomoscia ktory powinnien byc zlapany, zamieniony na blad i zwrocony przez api
+- jezeli poleci inne exception to powinnien byc rethrow
+- jezeli dlugosc account jest wieksza niz 10 to powinnien byc zwrocony error z api 
 
 notyfikacja
-- dla kazdych danych wejsciowych powinna byc notyfikacja odnosnie proby utworzenia transferu. 
-- Powinnien zostac stworzony serwis ktory taka notyfikacje bedzie wysylal. W aktualnej implementacji ma to byc poprostu console log danych wejsciowych jednak z zachowaniem ze implementacja ta moze sie zmienic w przyszlosci.
-- Taki serwis powinnien posiadac tylko jedna metode ktora przyjmuje dane wejsciowe, wykonuje notyfikacje i zwraca obiekt eventu z danym wejsciowymi + guidem.
+- dla kazdych danych wejsciowych powinna byc notyfikacja odnosnie proby utworzenia transferu i utworzenie id przelewu. 
+- Powinnien zostac stworzony serwis ktory taka notyfikacje bedzie wysylal. W aktualnej implementacji ma to byc poprostu console log ktory wypisuje wartosci amount, description, account.
+- Taki serwis powinnien posiadac tylko jedna metode ktora przyjmuje caly obiekt danych wejsciowych, wykonuje notyfikacje i zwraca obiekt notyfikacji z wszystkimi danymi wejsciowymi + id.
 
 utworzenie przelewu
-- todo
+- na podstawie otrzymanej notyfikacji i tylko niej powinnien byc utworzony przelew i zwrocony z API. 
 
 reguly:
-- bez uzywania any - jedyne any jaki moze byc uzyte to co zwraca kontroler
-- brak logiki w kontrolerach - kontroler moze posiadac max 1 if'a :)
+- bez uzywania ANY
+- bez zwracania wielu typow z metod - jedyny wyjatek to metoda kontrolera ktora zwraca koncowy rezultat
+- brak logiki w kontrolerach - kontroler moze posiadac max 1 if'a
+- wszystkie obiekty jakie sa tworzone maja byc immutable
 
 
